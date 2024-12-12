@@ -1,0 +1,25 @@
+<!-- templates/base.html.twig -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Mon Application{% endblock %}</title>
+    {% block stylesheets %}
+        <!-- Ajoutez vos feuilles de style ici -->
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <!-- En-tête de votre application -->
+    </header>
+    <main>
+        {% block body %}{% endblock %}
+    </main>
+    <footer>
+        <!-- Pied de page de votre application -->
+    </footer>
+    {% block javascripts %}
+        <!-- Ajoutez vos scripts JavaScript ici -->
+    {% endblock %}
+</body>
+</html>

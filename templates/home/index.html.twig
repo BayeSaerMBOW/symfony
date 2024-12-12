@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3 bg-success text-white p-4">
+                <h3>SAMA SCOOL</h3>
+                <div class="d-flex flex-column">
+                    <a href="#" class="text-white text-decoration-none mb-3">
+                        <i class="fas fa-chalkboard-teacher"></i> Professeur
+                    </a>
+                    <a href="#" class="text-white text-decoration-none mb-3">
+                        <i class="fas fa-book"></i> Cours
+                    </a>
+                    <a href="#" class="text-white text-decoration-none mb-3">
+                        <i class="fas fa-calendar-alt"></i> Sessions
+                    </a>
+                </div>
+            </div>
+            <div class="col-9 p-4">
+                <h2>Liste des Cours</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Classe</th>
+                            <th>Module</th>
+                            <th>Nombre D'Heure</th>
+                            <th>Semestre</th>
+                            <th>Quota Horaire</th>
+                            <th>Quota Effectué</th>
+                            <th>Etat</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for course in courses %}
+                            <tr>
+                                <td>{{ course.class }}</td>
+                                <td>{{ course.module }}</td>
+                                <td>{{ course.hours }}</td>
+                                <td>{{ course.semester }}</td>
+                                <td>{{ course.schedule }}</td>
+                                <td>{{ course.quota }}</td>
+                                <td>{{ course.status }}</td>
+                                <td>
+                                    <a href="#" class="btn btn-primary">Terminé</a>
+                                    <a href="#" class="btn btn-warning">En cours</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
